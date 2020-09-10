@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block background %}{%load static%}{% static 'img/inicio-bg.jpg' %}{% endblock %}
+
+{% block content %}
+    <h2> Modificar </h2>
+
+    <form method="POST">
+        {% csrf_token %}
+             {{ formProductos.as_p }}
+        <button type="submit">Modificar Producto</button>
+    </form>
+
+
+{% endblock %}

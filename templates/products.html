@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+
+{% block background %}{%load static%}{% static 'img/inicio-bg.jpg' %}{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+        <div class="col-md-8" style="margin-top: 70px;">
+
+            <h2> Productos </h2>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Unidades</th>
+
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for  Productos in Products  %}
+                        <tr>
+                            <td>{{ Productos.nombre }}</td>
+                            <td>{{ Productos.descripcion }}</td>
+                            <td>{{ Productos.precio }}</td>
+                            <td>{{ Productos.unidades }}</td>
+
+                            <td><a class="nav-link" href="{% url 'modificarproducto' %}" >Modificar productos </a></td>
+                            <td><a class="nav-link" href="{% url 'eliminarproducto' %}" >Eliminar productos </a></td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="nav-link" href="{% url 'crearproducto' %}" >Ingreso de nuevo producto </a>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

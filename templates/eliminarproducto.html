@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%  block backgroun %} {% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+                {{ formProductos.as_p }}
+        <button type="submit">Eliminar producto</button>
+    </form>
+
+
+{% endblock %}
